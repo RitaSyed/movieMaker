@@ -1,5 +1,5 @@
-// const dataGatekeeper = require('./dataGatekeeper');
+const dataGatekeeper = require('./dataGatekeeper');
 
-// dataGatekeeper.initializer();
+dataGatekeeper.initializer();
 
 console.log('main.js');
