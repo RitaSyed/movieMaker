@@ -7,13 +7,18 @@ const whenCategoriesLoad = function () {
   const categoriesData = JSON.parse(this.responseText).categories;
   console.log(categoriesData);
   data.setCategories(categoriesData);
-  dom(categoriesData);
+  // dom(categoriesData);
 };
 
 const whenMovieElementsLoad = function () {
   const movieElementsData = JSON.parse(this.responseText).items;
   console.log(movieElementsData);
   data.setMovieElements(movieElementsData);
+  // dom(data.getCategories, data.getMovieElements);
+  const datacateg = data.getCategories();
+  const dataelem = data.getMovieElements();
+  console.log(dom);
+  dom(datacateg, dataelem);
 };
 
 const errorFunction = function () {
@@ -23,6 +28,7 @@ const errorFunction = function () {
 const initializer = () => {
   loadCategories(whenCategoriesLoad, errorFunction);
   loadMovieElements(whenMovieElementsLoad, errorFunction);
+
 };
 
 module.exports = {
