@@ -3,10 +3,11 @@ const infoHolder = document.getElementById('info-holder');
 const domString = (categories, movieElements) => {
   let domStrang = '';
   categories.forEach((category) => {
+    domStrang +=    `<div class="col-sm-12">`;
+    domStrang +=    `<h2>${category.categoryName}</h2>`;
+    domStrang +=    `</div>`;
     movieElements.forEach((movieElement) => {
       if (movieElement.categoryId === category.id) {
-
-        domStrang +=    `<h2>${category.categoryName}</h2>`;
         domStrang +=    `<div class="col-sm-4">`;
         domStrang +=      `<div class="checkbox">`;
         domStrang +=        `<label class="checkbox-inline">`;
