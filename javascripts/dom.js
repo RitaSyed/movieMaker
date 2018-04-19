@@ -1,3 +1,4 @@
+const events = require('./events');
 const infoHolder = document.getElementById('info-holder');
 // const data = require('./data');
 const domString = (categories, movieElements) => {
@@ -11,7 +12,7 @@ const domString = (categories, movieElements) => {
         domStrang +=    `<div class="col-sm-4">`;
         domStrang +=      `<div class="checkbox">`;
         domStrang +=        `<label class="checkbox-inline">`;
-        domStrang +=          `<input type="checkbox" id="inlineCheckbox1" value="option1">${movieElement.name}`;
+        domStrang +=          `<input id="${movieElement.id}" type="checkbox" class="add-item">${movieElement.name}`;
         domStrang +=        `</label>`;
         domStrang +=      `</div>`;
         domStrang +=    `</div>`;
@@ -24,7 +25,7 @@ const domString = (categories, movieElements) => {
 
 const printToDom = (categories, movieElements) => {
   infoHolder.innerHTML = domString(categories, movieElements);
-  // events.addDepartmentEvents();
+  events();
 };
 
 module.exports = printToDom;

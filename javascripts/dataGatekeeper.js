@@ -7,7 +7,7 @@ const whenCategoriesLoad = function () {
   const categoriesData = JSON.parse(this.responseText).categories;
   console.log(categoriesData);
   data.setCategories(categoriesData);
-  // dom(categoriesData);
+  loadMovieElements(whenMovieElementsLoad, errorFunction);
 };
 
 const whenMovieElementsLoad = function () {
@@ -27,7 +27,7 @@ const errorFunction = function () {
 
 const initializer = () => {
   loadCategories(whenCategoriesLoad, errorFunction);
-  loadMovieElements(whenMovieElementsLoad, errorFunction);
+
 
 };
 
