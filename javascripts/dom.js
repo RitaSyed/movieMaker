@@ -1,4 +1,4 @@
-const events = require('./events');
+const events = require('./checkboxEvents');
 const infoHolder = document.getElementById('info-holder');
 // const data = require('./data');
 const domString = (categories, movieElements) => {
@@ -25,7 +25,7 @@ const domString = (categories, movieElements) => {
 
 const printToDom = (categories, movieElements) => {
   infoHolder.innerHTML = domString(categories, movieElements);
-  events();
+  events.addItemEvents();
 };
 
 module.exports = printToDom;
