@@ -25,7 +25,7 @@ const domString = (categories, movieElements) => {
 
 const printToDom = (categories, movieElements) => {
   infoHolder.innerHTML = domString(categories, movieElements);
-  events();
+  events.addItemEvents();
 };
 
 module.exports = printToDom;

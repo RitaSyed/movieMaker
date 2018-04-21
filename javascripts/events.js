@@ -1,8 +1,8 @@
 const data = require('./data');
 const itemCheckbox = document.getElementsByClassName('add-item');
 const selectedItems = [];
-const addItems = (e) => {
 
+const checkedItems = (e) => {
   data.getMovieElements().forEach((item) => {
     if (e.target.id === item.id) {
       selectedItems.push(item);
@@ -14,8 +14,12 @@ const addItems = (e) => {
 
 const addItemEvents = () => {
   for (let i = 0; i < itemCheckbox.length; i++) {
-    itemCheckbox[i].addEventListener('click', addItems);
+    itemCheckbox[i].addEventListener('click', checkedItems);
   }
+  // console.log(checkedItems());
 };
 
-module.exports = addItemEvents;
+module.exports = {
+  addItemEvents,
+  checkedItems,
+};
