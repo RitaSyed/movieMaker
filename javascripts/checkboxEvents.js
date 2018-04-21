@@ -9,7 +9,8 @@ const checkedItems = (e) => {
     }
   });
   console.log('selectedItems', selectedItems);
-  return selectedItems;
+  data.setCheckedItems(selectedItems);
+  // return selectedItems;
 };
 
 const addItemEvents = () => {

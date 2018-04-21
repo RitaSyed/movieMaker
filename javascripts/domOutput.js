@@ -1,17 +1,23 @@
+// const printBudgetToDom = require('./domOutput');
+// const data = require('./data');
+// const checkedItems = data.getCheckedItems();
+// const input = data.getBudget();
 // const events = require('./events');
-// console.log('checkedItems', checkedItems());
+// const input = document.getElementById('budget-input');
+// const inputNumber = input.value;
 const outputHolder = document.getElementById('output-holder');
-// console.log(checkedItems());
-const cartDomString = (checkedItems) => {
+// console.log(inputNumber);
+// console.log(inputU);
+const cartDomString = (checkedItems, budget) => {
   let domString = '';
   domString += `<div class="col-xs-8 col-xs-offset-2">`;
   domString += `<table class="table">`;
-  // domString +=   `<tr>`;
-  // domString +=     `<th>Name</th>`;
+  domString +=   `<tr>`;
+  domString +=     `<th>${budget}</th>`;
   // domString +=     `<th>Price</th>`;
   // domString +=     `<th>Quantity</th>`;
   // domString +=     `<th></th>`;
-  // domString +=   `</tr>`;
+  domString +=   `</tr>`;
   checkedItems.forEach((item) => {
     domString +=   `<tr>`;
     domString +=     `<td>${item.name}</td>`;
@@ -23,12 +29,11 @@ const cartDomString = (checkedItems) => {
   domString += `</table>`;
   // domString += getTotals(items);
   domString += `</div>`;
+  // console.log(inputU.value);
   return domString;
 };
-const printcheckedItemsToDom = (checkedItems) => {
-  // const cartItems = data.getCart();
-  // console.log('cartItem', cartItems);
-  outputHolder.innerHTML = cartDomString(checkedItems);
+const printcheckedItemsToDom = (checkedItems, budget) => {
+  outputHolder.innerHTML = cartDomString(checkedItems, budget);
 };
 
 module.exports = printcheckedItemsToDom;

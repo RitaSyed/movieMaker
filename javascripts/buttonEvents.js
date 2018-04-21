@@ -1,5 +1,5 @@
 // const printBudgetToDom = require('./domOutput');
-const eventsI = require('./events');
+const data = require('./data');
 const printcheckedItemsToDom = require('./domOutput');
 const setBudget = document.getElementById('set-budget');
 const events = () => {
@@ -9,11 +9,13 @@ const events = () => {
 // const input = document.getElementById('input');
 
 const buttonInitializer = (e) => {
-  // const userInput = input.value;
+  const input = document.getElementById('budget-input');
+
+  const budget = input.value;
   // console.log(userInput);
   // console.log(eventsI.checkedItems(e));
   console.log('new');
-  printcheckedItemsToDom(eventsI.checkedItems(e));
+  printcheckedItemsToDom(data.getCheckedItems(), budget);
 };
 
 module.exports = events;

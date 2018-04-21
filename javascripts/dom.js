@@ -1,4 +1,4 @@
-const events = require('./events');
+const events = require('./checkboxEvents');
 const infoHolder = document.getElementById('info-holder');
 // const data = require('./data');
 const domString = (categories, movieElements) => {
