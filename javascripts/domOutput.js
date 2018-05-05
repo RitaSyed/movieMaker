@@ -1,39 +1,25 @@
 // const printBudgetToDom = require('./domOutput');
-// const data = require('./data');
-// const checkedItems = data.getCheckedItems();
+const data = require('./data');
+// const checkedItem = data.getCheckedItem();
 // const input = data.getBudget();
 // const events = require('./events');
-// const input = document.getElementById('budget-input');
+const movieElPrice = document.getElementById('movieEl-price');
 // const inputNumber = input.value;
-const outputHolder = document.getElementById('output-holder');
+// const outputHolder = document.getElementById('output-holder');
 // console.log(inputNumber);
 // console.log(inputU);
-const cartDomString = (checkedItems, budget) => {
+const OutputDomString = () => {
+  // console.log('data.getCheckedItem()', data.getCheckedItem()[0]);
+  // console.log('checkedItem', checkedItem);
   let domString = '';
-  domString += `<div class="col-xs-8 col-xs-offset-2">`;
-  domString += `<table class="table">`;
-  domString +=   `<tr>`;
-  domString +=     `<th>${budget}</th>`;
-  // domString +=     `<th>Price</th>`;
-  // domString +=     `<th>Quantity</th>`;
-  // domString +=     `<th></th>`;
-  domString +=   `</tr>`;
-  checkedItems.forEach((item) => {
-    domString +=   `<tr>`;
-    domString +=     `<td>${item.name}</td>`;
-    domString +=     `<td>$${item.cost}</td>`;
-    // domString +=     `<td>${item.purchaseNum}</td>`;
-    // domString +=     `<td><button class="btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>`;
-    domString +=   `</tr>`;
-  });
-  domString += `</table>`;
-  // domString += getTotals(items);
+  // domString += `<div>`;
+  domString += `<div class="well well-sm">`;
+  domString +=    `<h5>${data.getCheckedItem()[0].name}: $${data.getCheckedItem()[0].cost}</h5>`;
   domString += `</div>`;
-  // console.log(inputU.value);
   return domString;
 };
-const printcheckedItemsToDom = (checkedItems, budget) => {
-  outputHolder.innerHTML = cartDomString(checkedItems, budget);
+const printCheckedItemsToDom = () => {
+  movieElPrice.innerHTML += OutputDomString();
 };
 
-module.exports = printcheckedItemsToDom;
+module.exports = printCheckedItemsToDom;

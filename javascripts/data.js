@@ -1,6 +1,6 @@
 let categories = [];
 let movieElements = [];
-let checkedItems = [];
+let checkedItem = [];
 let budget = 0;
 
 const getMovieElements = () => {
@@ -19,13 +19,13 @@ const setCategories = (categoriesArray) => {
   categories = categoriesArray;
 };
 
-const getCheckedItems = () => {
-  return checkedItems;
+const getCheckedItem = () => {
+  return checkedItem;
 };
 
-const setCheckedItems = (itemsArray) => {
-  checkedItems = itemsArray;
-  console.log('data', checkedItems);
+const setCheckedItem = (itemsArray) => {
+  checkedItem = itemsArray;
+  // console.log('data', checkedItem);
 };
 
 const getBudget = () => {
@@ -34,7 +34,7 @@ const getBudget = () => {
 
 const setBudget = (number) => {
   budget = number;
-  console.log('budget', budget);
+  // console.log('budget', budget);
 };
 
 module.exports = {
@@ -42,8 +42,8 @@ module.exports = {
   setMovieElements,
   getCategories,
   setCategories,
-  getCheckedItems,
-  setCheckedItems,
+  getCheckedItem,
+  setCheckedItem,
   getBudget,
   setBudget,
 };

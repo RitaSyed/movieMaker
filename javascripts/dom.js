@@ -1,23 +1,27 @@
-const events = require('./checkboxEvents');
 const infoHolder = document.getElementById('info-holder');
-// const data = require('./data');
+const buttonEvents = require('./buttonEvents');
+const checkboxEvents = require('./checkboxEvents');
+
 const domString = (categories, movieElements) => {
   let domStrang = '';
   categories.forEach((category) => {
+    domStrang += `<div id="${category.id}" class="category">`;
     domStrang +=    `<div class="col-sm-12">`;
-    domStrang +=    `<h2>${category.categoryName}</h2>`;
+    domStrang +=        `<h2>${category.categoryName}</h2>`;
     domStrang +=    `</div>`;
     movieElements.forEach((movieElement) => {
       if (movieElement.categoryId === category.id) {
         domStrang +=    `<div class="col-sm-4">`;
         domStrang +=      `<div class="checkbox">`;
         domStrang +=        `<label class="checkbox-inline">`;
-        domStrang +=          `<input id="${movieElement.id}" type="checkbox" class="add-item">${movieElement.name}`;
+        domStrang +=          `<input id="${movieElement.id}" type="checkbox" class="add-item" checked disabled>${movieElement.name}`;
         domStrang +=        `</label>`;
         domStrang +=      `</div>`;
         domStrang +=    `</div>`;
       }
+
     });
+    domStrang += `</div>`;
   });
   // console.log(domStrang);
   return domStrang;
@@ -25,11 +29,13 @@ const domString = (categories, movieElements) => {
 
 const printToDom = (categories, movieElements) => {
   infoHolder.innerHTML = domString(categories, movieElements);
-  events.addItemEvents();
+  buttonEvents();
+  checkboxEvents.checkboxEvents();
 };
 
 module.exports = printToDom;
 
+// domString += getTotals(ite
 // getMovieElements,
 //   setMovieElements,
 //   getCategories,
