@@ -2,6 +2,7 @@ const data = require('./data');
 const printCheckedItemsToDom = require('./domOutput');
 const itemCheckbox = document.getElementsByClassName('add-item');
 const budget = document.getElementById('budget');
+const canImakeTheMovieYet = document.getElementById('canImakeTheMovieYet');
 const allCategories = document.getElementsByClassName('category');
 const checkboxInitializer = (e) => {
   checkedItems(e);
@@ -50,22 +51,35 @@ const atLeastOneCheckboxChecked = (e) => {
     // const what = allCategories[i].classList.contains('oneCheckboxIsChecked');
     // console.log('categori', what);
     // console.log('categori', allCategories[i].length);
+    // console.log(allCategories);
     if (allCategories[i].classList.contains('oneCheckboxIsChecked')) {
-
       howManyCategoriesAreChecked.push(1);
     }
     if (howManyCategoriesAreChecked.length === 4) {
       console.log('make movie!');
+      canImakeTheMovieYet.innerHTML = 'You can make this movie!!!';
+      makeItWell(canImakeTheMovieYet);
+      greenColor(canImakeTheMovieYet);
     } else if (howManyCategoriesAreChecked.length < 4) {
-      // console.log('you cant make movie yet');
+      canImakeTheMovieYet.innerHTML = "You can't make this movie yet";
+      makeItWell(canImakeTheMovieYet);
+      redColor(canImakeTheMovieYet);
     };
   };
-  // console.log(howManyCategoriesAreChecked.length);
-  // const category1 = getElementById('0');
-  // const categories = data.getCategories();
-  // console.log('categories', categories);
-  // console.log('atLeastOneCheckboxChecked', e.target.checked);
-  // for(let i = 0; i<)
+};
+
+const makeItWell = (element) => {
+  element.classList.add('well', 'well-sm');
+};
+
+const greenColor = (element) => {
+  element.classList.remove('red');
+  element.classList.add('green');
+};
+
+const redColor = (element) => {
+  element.classList.remove('green');
+  element.classList.add('red');
 };
 
 const checkboxEvents = () => {
