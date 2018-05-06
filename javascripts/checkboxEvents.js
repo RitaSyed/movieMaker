@@ -42,7 +42,10 @@ const recalculatedBudget = () => {
   const currentBudget = budgetData - checkedItemCost;
   data.setBudget(currentBudget);
   budget.innerHTML = `$${currentBudget}`;
-
+  if (currentBudget < 0) {
+    cantMakeMovieString(canImakeTheMovieYet);
+    redColor(canImakeTheMovieYet);
+  };
 };
 
 const atLeastOneCheckboxChecked = (e) => {
@@ -50,8 +53,8 @@ const atLeastOneCheckboxChecked = (e) => {
   for (let i = 0; i < allCategories.length; i++) {
     // const what = allCategories[i].classList.contains('oneCheckboxIsChecked');
     // console.log('categori', what);
-    // console.log('categori', allCategories[i].length);
-    // console.log(allCategories);
+    console.log('categori', allCategories[i].length);
+    // console.log((allCategories[i].classList.contains('oneCheckboxIsChecked')));
     if (allCategories[i].classList.contains('oneCheckboxIsChecked')) {
       howManyCategoriesAreChecked.push(1);
     }
@@ -61,11 +64,16 @@ const atLeastOneCheckboxChecked = (e) => {
       makeItWell(canImakeTheMovieYet);
       greenColor(canImakeTheMovieYet);
     } else if (howManyCategoriesAreChecked.length < 4) {
-      canImakeTheMovieYet.innerHTML = "You can't make this movie yet";
+      cantMakeMovieString(canImakeTheMovieYet);
       makeItWell(canImakeTheMovieYet);
       redColor(canImakeTheMovieYet);
     };
   };
+
+};
+
+const cantMakeMovieString = (element) => {
+  return element.innerHTML = "You can't make this movie";
 };
 
 const makeItWell = (element) => {
