@@ -3,7 +3,9 @@ const printCheckedItemsToDom = require('./domOutput');
 const itemCheckbox = document.getElementsByClassName('add-item');
 const budget = document.getElementById('budget');
 const canImakeTheMovieYet = document.getElementById('canImakeTheMovieYet');
+const progressBar = document.getElementById('progress-bar');
 const allCategories = document.getElementsByClassName('category');
+
 const checkboxInitializer = (e) => {
   checkedItems(e);
   // recalculatedBudget(printInitialBudget(), checkedItems(e));
@@ -45,33 +47,43 @@ const recalculatedBudget = () => {
   if (currentBudget < 0) {
     cantMakeMovieString(canImakeTheMovieYet);
     redColor(canImakeTheMovieYet);
+    redColor(budget);
   };
 };
 
 const atLeastOneCheckboxChecked = (e) => {
+  const howManyCategoriesTotal = data.getCategories();
   const howManyCategoriesAreChecked = [];
   for (let i = 0; i < allCategories.length; i++) {
     // const what = allCategories[i].classList.contains('oneCheckboxIsChecked');
     // console.log('categori', what);
-    console.log('categori', allCategories[i].length);
+
     // console.log((allCategories[i].classList.contains('oneCheckboxIsChecked')));
     if (allCategories[i].classList.contains('oneCheckboxIsChecked')) {
       howManyCategoriesAreChecked.push(1);
     }
-    if (howManyCategoriesAreChecked.length === 4) {
+    if (howManyCategoriesAreChecked.length === howManyCategoriesTotal.length) {
       console.log('make movie!');
       canImakeTheMovieYet.innerHTML = 'You can make this movie!!!';
       makeItWell(canImakeTheMovieYet);
       greenColor(canImakeTheMovieYet);
-    } else if (howManyCategoriesAreChecked.length < 4) {
+    } else if (howManyCategoriesAreChecked.length < howManyCategoriesTotal.length) {
       cantMakeMovieString(canImakeTheMovieYet);
       makeItWell(canImakeTheMovieYet);
       redColor(canImakeTheMovieYet);
     };
   };
-
+  // console.log('categori', howManyCategoriesAreChecked.length);
+  progressBarUpdate(howManyCategoriesAreChecked);
 };
 
+const progressBarUpdate = (howManyCategoriesAreChecked) => {
+  const howManyCategoriesTotal = data.getCategories();
+  // console.log('howManyCategoriesTotal', howManyCategoriesAreChecked.length);
+  const progressPercentage = (howManyCategoriesAreChecked.length / howManyCategoriesTotal.length) * 100;
+  progressBar.style.width = `${progressPercentage}%`;
+  console.log('howManyCategoriesTotal', howManyCategoriesTotal);
+};
 const cantMakeMovieString = (element) => {
   return element.innerHTML = "You can't make this movie";
 };

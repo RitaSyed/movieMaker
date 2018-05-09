@@ -9,3 +9,7 @@ body{
 .red {
   color: red;
 }
+
+.progress-bar-margin {
+  margin: 35px;
+}
