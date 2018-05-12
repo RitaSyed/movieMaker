@@ -6,14 +6,14 @@
 3. If the user goes over budget or does not include one movie element from each category, they cannot make the movie.
 ## Screenshot
 #### Page view on load
-![WebPage]()
+![WebPage](https://raw.githubusercontent.com/RitaSyed/movieMaker/master/screenshots/PageViewOnLoad.png)
 #### Page view when budget is set and two categories are chosen
-![WebPage]()
-#### Page view when All category are chosen
-![WebPage]()
+![WebPage](https://raw.githubusercontent.com/RitaSyed/movieMaker/master/screenshots/PageViewWhenCategoryIsChosen.png)
+#### Page view when All category are chosen and Under the budget
+![WebPage](https://raw.githubusercontent.com/RitaSyed/movieMaker/master/screenshots/PageViewWhenAllCategoriesAreChosen.png)
 
-#### Page view when All category are chosen but went over the budget
-![WebPage]()
+#### Page view when All category are chosen But went over the budget
+![WebPage](https://raw.githubusercontent.com/RitaSyed/movieMaker/master/screenshots/PageViewWhenOverTheBudget.png)
 
 
 ## Technologies Used:
