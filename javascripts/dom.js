@@ -5,7 +5,7 @@ const checkboxEvents = require('./checkboxEvents');
 const domString = (categories, movieElements) => {
   let domStrang = '';
   categories.forEach((category) => {
-    domStrang += `<div id="${category.id}" class="category">`;
+    domStrang += `<div id="${category.id}" class="category ${category.id}">`;
     domStrang +=    `<div class="col-sm-12">`;
     domStrang +=        `<h2>${category.categoryName}</h2>`;
     domStrang +=    `</div>`;
@@ -14,7 +14,7 @@ const domString = (categories, movieElements) => {
         domStrang +=    `<div class="col-sm-4">`;
         domStrang +=      `<div class="checkbox">`;
         domStrang +=        `<label class="checkbox-inline">`;
-        domStrang +=          `<input id="${movieElement.id}" type="checkbox" class="add-item" checked disabled>${movieElement.name}`;
+        domStrang +=          `<input id="${movieElement.id}" type="checkbox" class="add-item ${movieElement.categoryId}" checked disabled>${movieElement.name}`;
         domStrang +=        `</label>`;
         domStrang +=      `</div>`;
         domStrang +=    `</div>`;
@@ -32,7 +32,6 @@ const printToDom = (categories, movieElements) => {
   buttonEvents();
   checkboxEvents.checkboxEvents();
 };
-
 module.exports = printToDom;
 
 // domString += getTotals(ite

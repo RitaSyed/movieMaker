@@ -25,7 +25,19 @@ const getCheckedItem = () => {
 
 const setCheckedItem = (itemsArray) => {
   checkedItem = itemsArray;
-  // console.log('data', checkedItem);
+  console.log('data', checkedItem);
+};
+
+const findCheckedItem = (id) => {
+  return checkedItem.find(item => item.id === id);
+};
+// const findCategory = (categoryId) => {
+//   return checkedItem.find(item => item.categoryId === categoryId);
+// };
+
+const deleteCheckedItem = (removeItem) => {
+  const removeIndex = checkedItem.indexOf(removeItem);
+  checkedItem.splice(removeIndex, 1);
 };
 
 const getBudget = () => {
@@ -46,4 +58,8 @@ module.exports = {
   setCheckedItem,
   getBudget,
   setBudget,
+  // findCategory,
+
+  findCheckedItem,
+  deleteCheckedItem,
 };

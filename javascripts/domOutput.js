@@ -13,13 +13,16 @@ const OutputDomString = () => {
   // console.log('checkedItem', checkedItem);
   let domString = '';
   // domString += `<div>`;
-  domString += `<div class="well well-sm">`;
-  domString +=    `<h5>${data.getCheckedItem()[0].name}: $${data.getCheckedItem()[0].cost}</h5>`;
-  domString += `</div>`;
+  for (let i = 0; i < data.getCheckedItem().length; i++) {
+    // console.log(data.getCheckedItem());
+    domString += `<div class="well well-sm">`;
+    domString +=    `<h5>${data.getCheckedItem()[i].name}: $${data.getCheckedItem()[i].cost}</h5>`;
+    domString += `</div>`;
+  }
   return domString;
 };
 const printCheckedItemsToDom = () => {
-  movieElPrice.innerHTML += OutputDomString();
+  movieElPrice.innerHTML = OutputDomString();
 };
 
 module.exports = printCheckedItemsToDom;
