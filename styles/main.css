@@ -1,21 +1,6 @@
-/* body{ */
-  /* background-color: blueviolet; */
-  /* background: url('https://ae01.alicdn.com/kf/HTB1UJmfMpXXXXXRaXXXq6xXFXXXP/Adearstudio-CD50-Led-150w-Movie-Spotlight-Tunable-High-Efficient-Movie-Spotlight-spotlights-for-movie-production-2.jpg') no-repeat center center fixed; */
-  /* background-size: cover; */
-/* } */
-
 label {
   color:black;
 }
-
-/* .container {
-    position: relative;
-    width: 80%;
-    margin: 50px auto;
-    padding: 20px;
-    background: yellow;
-    box-shadow: 0 0 20px black;
-} */
 
 .container {
   position: relative;
