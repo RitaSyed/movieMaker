@@ -19,7 +19,6 @@ const domString = (categories, movieElements) => {
         domStrang +=      `</div>`;
         domStrang +=    `</div>`;
       }
-
     });
     domStrang += `</div>`;
   });
