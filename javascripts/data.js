@@ -4,7 +4,6 @@ let checkedItem = [];
 let budget = 0;
 
 const getMovieElements = () => {
-  // console.log('getMovieElements', getMovieElements());
   return movieElements;
 };
 const setMovieElements = (movieElementsArray) => {
@@ -12,7 +11,6 @@ const setMovieElements = (movieElementsArray) => {
 };
 
 const getCategories = () => {
-  // console.log('getCategories', getCategories());
   return categories;
 };
 const setCategories = (categoriesArray) => {
@@ -31,9 +29,6 @@ const setCheckedItem = (itemsArray) => {
 const findCheckedItem = (id) => {
   return checkedItem.find(item => item.id === id);
 };
-// const findCategory = (categoryId) => {
-//   return checkedItem.find(item => item.categoryId === categoryId);
-// };
 
 const deleteCheckedItem = (removeItem) => {
   const removeIndex = checkedItem.indexOf(removeItem);
@@ -46,7 +41,6 @@ const getBudget = () => {
 
 const setBudget = (number) => {
   budget = number;
-  // console.log('budget', budget);
 };
 
 module.exports = {
@@ -58,8 +52,6 @@ module.exports = {
   setCheckedItem,
   getBudget,
   setBudget,
-  // findCategory,
-
   findCheckedItem,
   deleteCheckedItem,
 };
