@@ -6,12 +6,19 @@ const budget = document.getElementById('budget');
 
 const buttonInitializer = (e) => {
   setBudgetData();
-  // console.log(budget);
-  // console.log(eventsI.checkedItems(e));
-  console.log('new');
   uncheckAndUnableCheckboxes();
   clearInputField();
-  // printcheckedItemsToDom(data.getCheckedItems(), budget);
+  console.log('btn');
+};
+
+const keypressInitializer = (e) => {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    setBudgetData();
+    uncheckAndUnableCheckboxes();
+    clearInputField();
+    console.log('keypress');
+  }
 };
 
 const uncheckAndUnableCheckboxes = () => {
@@ -26,43 +33,13 @@ const clearInputField = () => {
 };
 
 const setBudgetData = () => {
-
   const inputNum = (inputField.value) * 1;
-  // console.log(budget);
   const budgetNum = budget.innerHTML = inputNum;
-  // printcheckedItemsToDom(checkedItems(), budget);
   data.setBudget(budgetNum);
-  // console.log(budgetNum);
-  // const initialBudget = data.getBudget();
-  // return budgetNum;
 };
 const buttonEvents = () => {
   setBudget.addEventListener('click', buttonInitializer);
+  inputField.addEventListener('keypress', keypressInitializer);
 };
 
 module.exports = buttonEvents;
-
-// inputField.addEventListener('click', uncheckAndUnableCheckboxes);
-// console.log(checkedItems());
-
-// // const printBudgetToDom = require('./domOutput');
-// const data = require('./data');
-// const printcheckedItemsToDom = require('./domOutput');
-// const setBudget = document.getElementById('set-budget');
-// const events = () => {
-//   setBudget.addEventListener('click', buttonInitializer);
-// };
-
-// // const input = document.getElementById('input');
-
-// const buttonInitializer = (e) => {
-//   const input = document.getElementById('budget-input');
-
-//   const budget = input.value;
-//   // console.log(userInput);
-//   // console.log(eventsI.checkedItems(e));
-//   console.log('new');
-//   printcheckedItemsToDom(data.getCheckedItems(), budget);
-// };
-
-// module.exports = events;

@@ -17,7 +17,7 @@ const whenMovieElementsLoad = function () {
 };
 
 const errorFunction = function () {
-  console.error('shit broke');
+  console.error('broke');
 };
 
 const initializer = () => {
